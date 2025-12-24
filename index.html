@@ -1,372 +1,183 @@
-<!DOCTYPE html>
+
+     <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Yasin Bro | Bio Link</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
-<style>
-*{box-sizing:border-box}
-
-body{
-    margin:0;
-    font-family:'Segoe UI',sans-serif;
-    color:#fff;
-    background:linear-gradient(-45deg,#020617,#0f172a,#020617,#020617);
-    background-size:400% 400%;
-    animation:bg 12s ease infinite;
-}
-
-@keyframes bg{
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-
-.container{
-    max-width:430px;
-    margin:auto;
-    padding:26px;
-    text-align:center;
-}
-
-.profile{
-    margin-top:40px;
-    animation:float 4s ease-in-out infinite;
-}
-
-@keyframes float{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-6px)}
-}
-
-.profile img{
-    width:135px;
-    height:135px;
-    border-radius:50%;
-    border:4px solid #38bdf8;
-    box-shadow:0 0 30px rgba(56,189,248,.7);
-}
-
-h1{
-    margin:18px 0 6px;
-    font-size:27px;
-    letter-spacing:.5px;
-}
-
-p{
-    margin:0 0 28px;
-    opacity:.85;
-}
-
-.link{
-    position:relative;
-    display:flex;
-    align-items:center;
-    gap:15px;
-    background:rgba(255,255,255,.10);
-    padding:17px 20px;
-    margin:15px 0;
-    border-radius:16px;
-    text-decoration:none;
-    color:#fff;
-    font-size:18px;
-    font-weight:600;
-    backdrop-filter:blur(12px);
-    box-shadow:0 10px 30px rgba(0,0,0,.35);
-    overflow:hidden;
-    transition:.35s;
-}
-
-.link i{
-    font-size:23px;
-    width:26px;
-    text-align:center;
-}
-
-.link::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle at var(--x) var(--y),
-    rgba(255,255,255,.35),transparent 40%);
-    opacity:0;
-    transition:.3s;
-}
-
-.link:hover::after{
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Yasin Bro | Bio Link</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- ICONS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
-    font-family:'Segoe UI',sans-serif;
-    min-height:100vh;
-    background:linear-gradient(-45deg,#38bdf8,#0ea5e9,#22d3ee,#38bdf8);
-    background-size:400% 400%;
-    animation:bg 12s ease infinite;
-    color:#000;
-}
-
-@keyframes bg{
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-
-.container{
-    max-width:430px;
-    margin:auto;
-    padding:30px 20px;
-    text-align:center;
-}
-
-.profile{
-    margin-top:40px;
-}
-
-.profile img{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    border:5px solid #000;
-    background:#000;
-    box-shadow:0 15px 40px rgba(0,0,0,.4);
-}
-
-.name{
-    margin-top:18px;
-    font-size:28px;
-    font-weight:700;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-}
-
-.badge{
-    width:20px;
-    height:20px;
-    background:#1d9bf0;
-    color:#fff;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:12px;
-}
-
-.bio{
-    margin:10px 0 30px;
-    font-size:16px;
-    opacity:.85;
-}
-
-.link{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    background:#000;
-    color:#38bdf8;
-    padding:18px 20px;
-    margin:16px 0;
-    border-radius:18px;
-    text-decoration:none;
-    font-size:18px;
-    font-weight:600;
-    box-shadow:0 12px 30px rgba(0,0,0,.35);
-    transition:.35s;
-}
-
-.link i{
-    font-size:22px;
-    width:26px;
-    text-align:center;
-}
-
-.link:hover{
-    transform:scale(1.06);
-    background:#020617;
-}
-
-.footer{
-    margin:40px 0 10px;
-    font-size:13px;
-    opacity:.7;
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-    <div class="profile">
-        <img src="profile.png" alt="Profile">
-    </div>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Yasin Bro | Ultimate Bio</title>
+<title>Yasin Bro | Animated Bio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,system-ui,sans-serif}
-
-/* ===== THEMES ===== */
-:root{
- --bg1:#020617;--bg2:#0f172a;--card:rgba(255,255,255,.07);
- --text:#fff;--muted:#94a3b8;--accent:#38bdf8;
-}
-.light{
- --bg1:#e5f3ff;--bg2:#c7e6ff;--card:rgba(255,255,255,.75);
- --text:#020617;--muted:#334155;--accent:#2563eb;
-}
-
 body{
- min-height:100vh;
- background:linear-gradient(270deg,var(--bg1),var(--bg1),var(--bg2),var(--bg1));
- background-size:400% 400%;
- animation:bg 14s ease infinite;
- display:flex;align-items:center;justify-content:center;
- color:var(--text);
+  min-height:100vh;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
 }
-@keyframes bg{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 
-.loader{
- position:fixed;inset:0;display:grid;place-items:center;
- background:#020617;z-index:9;animation:fade 1.2s forwards 1.2s;
+/* ===== CANVAS VIDEO BACKGROUND ===== */
+canvas{
+  position:fixed;
+  inset:0;
+  z-index:-2;
 }
-@keyframes fade{to{opacity:0;visibility:hidden}}
-.spinner{
- width:48px;height:48px;border-radius:50%;
- border:4px solid #1e293b;border-top-color:#38bdf8;
- animation:spin 1s linear infinite
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(2,6,23,.75);
+  z-index:-1;
 }
-@keyframes spin{to{transform:rotate(360deg)}}
 
+/* ===== CARD ===== */
 .container{
- width:100%;max-width:390px;padding:32px 22px;border-radius:26px;
- background:var(--card);backdrop-filter:blur(22px);
- box-shadow:0 25px 60px rgba(0,0,0,.65);text-align:center;
- animation:up .8s ease;
-}
-@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-
-.top{
- display:flex;justify-content:flex-end;margin-bottom:6px
-}
-.toggle{
- width:38px;height:38px;border-radius:50%;
- display:grid;place-items:center;cursor:pointer;
- background:rgba(255,255,255,.15)
+  width:100%;
+  max-width:390px;
+  padding:32px 22px;
+  border-radius:26px;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(20px);
+  box-shadow:0 25px 60px rgba(0,0,0,.75);
+  text-align:center;
 }
 
+/* ===== PROFILE ===== */
 .avatar{
- width:150px;height:150px;margin:auto;padding:6px;border-radius:50%;
- background:linear-gradient(45deg,var(--accent),#2563eb,var(--accent));
- animation:glow 3s linear infinite
+  width:150px;height:150px;margin:auto;padding:6px;border-radius:50%;
+  background:linear-gradient(45deg,#38bdf8,#2563eb,#38bdf8);
+  animation:ring 3s linear infinite;
 }
-@keyframes glow{0%{box-shadow:0 0 15px var(--accent)}50%{box-shadow:0 0 35px var(--accent)}100%{box-shadow:0 0 15px var(--accent)}}
-.avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:#000}
+@keyframes ring{
+  0%{box-shadow:0 0 15px #38bdf8}
+  50%{box-shadow:0 0 40px #38bdf8}
+  100%{box-shadow:0 0 15px #38bdf8}
+}
+.avatar img{
+  width:100%;height:100%;border-radius:50%;object-fit:cover;background:#000;
+}
 
+/* ===== TEXT ===== */
 .name{
- margin-top:16px;font-size:23px;font-weight:700;
- display:flex;gap:6px;justify-content:center;align-items:center
+  margin-top:16px;
+  font-size:24px;
+  font-weight:800;
+  color:#38bdf8;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:6px;
 }
 .badge{
- width:18px;height:18px;border-radius:50%;
- background:#1d9bf0;color:#fff;display:grid;place-items:center;font-size:11px
+  width:18px;height:18px;border-radius:50%;
+  background:#1d9bf0;display:grid;place-items:center;font-size:11px;
 }
-.role{font-size:14px;color:var(--muted);margin:8px 0 16px}
+.role{margin-top:6px;font-size:14px;color:#22c55e}
 
+/* ===== LINKS ===== */
 .link{
- display:flex;gap:12px;align-items:center;justify-content:center;
- margin:12px 0;padding:15px;border-radius:16px;
- background:rgba(255,255,255,.12);color:var(--text);text-decoration:none;
- transition:.35s;position:relative;overflow:hidden
+  display:flex;gap:12px;align-items:center;justify-content:center;
+  margin:14px 0;padding:15px;border-radius:16px;
+  font-size:16px;font-weight:600;text-decoration:none;
+  color:#000;transition:.35s;
 }
-.link i{font-size:18px}
-.link::before{
- content:"";position:absolute;inset:0;
- background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);
- transform:translateX(-100%);transition:.6s
-}
-.link:hover::before{transform:translateX(100%)}
+.telegram{background:#38bdf8}
+.page{background:#22c55e}
+.profile{background:#facc15}
 .link:hover{
- transform:translateY(-2px) scale(1.02);
- background:rgba(56,189,248,.28);
- box-shadow:0 0 25px rgba(56,189,248,.6)
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 0 30px rgba(255,255,255,.5);
 }
 
-.stats{
- display:flex;justify-content:center;gap:14px;margin-top:10px;
- font-size:13px;color:var(--muted)
-}
-.footer{margin-top:16px;font-size:12px;color:var(--muted)}
+.footer{margin-top:18px;font-size:12px;color:#cbd5f5}
 </style>
 </head>
 
 <body>
 
-<div class="loader"><div class="spinner"></div></div>
+<canvas id="bg"></canvas>
+<div class="overlay"></div>
 
 <div class="container">
-  <div class="top">
-    <div class="toggle" id="themeBtn"><i class="fa-solid fa-moon"></i></div>
+  <div class="avatar">
+    <img src="profile.png">
   </div>
 
-  <div class="avatar"><img src="profile.png"></div>
+  <div class="name">
+    Yasin Bro
+    <span class="badge"><i class="fa-solid fa-check"></i></span>
+  </div>
 
-  <div class="name">Yasin Bro <span class="badge"><i class="fa-solid fa-check"></i></span></div>
   <div class="role">Digital Creator</div>
 
-  <a class="link" href="https://t.me/idea_hube"><i class="fa-brands fa-telegram"></i>Telegram Channel</a>
-  <a class="link" href="https://www.facebook.com/share/1Bvb4qpuNX/"><i class="fa-brands fa-facebook"></i>Facebook Page</a>
-  <a class="link" href="https://www.facebook.com/share/1CyS5DdCKm/"><i class="fa-solid fa-user"></i>Facebook Profile</a>
+  <a class="link telegram" href="https://t.me/idea_hube">
+    <i class="fa-brands fa-telegram"></i> Telegram Channel
+  </a>
 
-  <div class="stats">
-    <div>👀 Visits: <span id="visit">0</span></div>
-  </div>
+  <a class="link page" href="https://www.facebook.com/share/1Bvb4qpuNX/">
+    <i class="fa-brands fa-facebook"></i> Facebook Page
+  </a>
 
-  <div class="footer">© 2025 Yasin Bro • Ultimate Bio</div>
+  <a class="link profile" href="https://www.facebook.com/share/1CyS5DdCKm/">
+    <i class="fa-solid fa-user"></i> Facebook Profile
+  </a>
+
+  <div class="footer">© 2025 Yasin Bro • Animated Bio</div>
 </div>
 
-<audio id="click" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"></audio>
-
 <script>
-// Click sound
-document.querySelectorAll('.link,.toggle').forEach(e=>{
- e.addEventListener('click',()=>document.getElementById('click').play())
+/* ===== CANVAS VIDEO ANIMATION ===== */
+const c=document.getElementById("bg"),x=c.getContext("2d");
+let w,h,pts=[];
+function resize(){
+  w=c.width=window.innerWidth;
+  h=c.height=window.innerHeight;
+  pts=[...Array(120)].map(()=>({
+    x:Math.random()*w,
+    y:Math.random()*h,
+    v:0.5+Math.random()*1.5,
+    s:1+Math.random()*2
+  }));
+}
+window.onresize=resize;resize();
+
+function draw(){
+  x.fillStyle="rgba(2,6,23,.35)";
+  x.fillRect(0,0,w,h);
+  x.fillStyle="#38bdf8";
+  pts.forEach(p=>{
+    p.y-=p.v;
+    if(p.y<0)p.y=h;
+    x.fillRect(p.x,p.y,p.s,p.s*3);
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+
+/* ===== AUDIO (SELF GENERATED) ===== */
+const AudioCtx=window.AudioContext||window.webkitAudioContext;
+const ctx=new AudioCtx();
+function clickSound(){
+  const o=ctx.createOscillator(),g=ctx.createGain();
+  o.type="sine";o.frequency.value=700;
+  g.gain.value=0.05;
+  o.connect(g);g.connect(ctx.destination);
+  o.start();o.stop(ctx.currentTime+.08);
+}
+document.querySelectorAll(".link").forEach(b=>{
+  b.onclick=()=>{ctx.resume();clickSound();}
 });
 
-// Theme toggle
-const body=document.body,btn=document.getElementById('themeBtn');
-if(localStorage.theme==='light'){body.classList.add('light');btn.innerHTML='<i class="fa-solid fa-sun"></i>'}
-btn.onclick=()=>{
- body.classList.toggle('light');
- localStorage.theme=body.classList.contains('light')?'light':'dark';
- btn.innerHTML=body.classList.contains('light')?'<i class="fa-solid fa-sun"></i>':'<i class="fa-solid fa-moon"></i>';
-};
-
-// Visit counter (local)
-let v=+localStorage.visits||0;v++;localStorage.visits=v;
-document.getElementById('visit').innerText=v;
+// soft ambient start
+setTimeout(()=>{
+  ctx.resume();
+  const o=ctx.createOscillator(),g=ctx.createGain();
+  o.type="sine";o.frequency.value=120;
+  g.gain.value=.015;
+  o.connect(g);g.connect(ctx.destination);
+  o.start();
+},800);
 </script>
 
 </body>
