@@ -1,9 +1,8 @@
-
-     <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Yasin Bro | Animated Bio</title>
+<title>Yasin Bro | Horror Bio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
@@ -18,7 +17,7 @@ body{
   color:#fff;
 }
 
-/* ===== CANVAS VIDEO BACKGROUND ===== */
+/* ===== BACKGROUND ===== */
 canvas{
   position:fixed;
   inset:0;
@@ -27,7 +26,7 @@ canvas{
 .overlay{
   position:fixed;
   inset:0;
-  background:rgba(2,6,23,.75);
+  background:rgba(2,6,23,.8);
   z-index:-1;
 }
 
@@ -39,23 +38,24 @@ canvas{
   border-radius:26px;
   background:rgba(255,255,255,.08);
   backdrop-filter:blur(20px);
-  box-shadow:0 25px 60px rgba(0,0,0,.75);
+  box-shadow:0 25px 60px rgba(0,0,0,.85);
   text-align:center;
 }
 
 /* ===== PROFILE ===== */
 .avatar{
   width:150px;height:150px;margin:auto;padding:6px;border-radius:50%;
-  background:linear-gradient(45deg,#38bdf8,#2563eb,#38bdf8);
-  animation:ring 3s linear infinite;
+  background:linear-gradient(45deg,#ff0000,#8b0000,#ff0000);
+  animation:ring 2.5s linear infinite;
 }
 @keyframes ring{
-  0%{box-shadow:0 0 15px #38bdf8}
-  50%{box-shadow:0 0 40px #38bdf8}
-  100%{box-shadow:0 0 15px #38bdf8}
+  0%{box-shadow:0 0 10px red}
+  50%{box-shadow:0 0 40px red}
+  100%{box-shadow:0 0 10px red}
 }
 .avatar img{
-  width:100%;height:100%;border-radius:50%;object-fit:cover;background:#000;
+  width:100%;height:100%;border-radius:50%;
+  object-fit:cover;background:#000;
 }
 
 /* ===== TEXT ===== */
@@ -63,7 +63,7 @@ canvas{
   margin-top:16px;
   font-size:24px;
   font-weight:800;
-  color:#38bdf8;
+  color:#ff4d4d;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -71,26 +71,54 @@ canvas{
 }
 .badge{
   width:18px;height:18px;border-radius:50%;
-  background:#1d9bf0;display:grid;place-items:center;font-size:11px;
+  background:#ff0000;
+  display:grid;place-items:center;
+  font-size:11px;
 }
-.role{margin-top:6px;font-size:14px;color:#22c55e}
+.role{
+  margin-top:6px;
+  font-size:14px;
+  color:#facc15;
+}
 
 /* ===== LINKS ===== */
 .link{
-  display:flex;gap:12px;align-items:center;justify-content:center;
-  margin:14px 0;padding:15px;border-radius:16px;
-  font-size:16px;font-weight:600;text-decoration:none;
-  color:#000;transition:.35s;
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:center;
+  margin:14px 0;
+  padding:15px;
+  border-radius:16px;
+  font-size:16px;
+  font-weight:600;
+  text-decoration:none;
+  color:#000;
+  transition:.35s;
 }
 .telegram{background:#38bdf8}
 .page{background:#22c55e}
 .profile{background:#facc15}
 .link:hover{
-  transform:translateY(-3px) scale(1.03);
-  box-shadow:0 0 30px rgba(255,255,255,.5);
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 0 30px rgba(255,0,0,.8);
 }
 
-.footer{margin-top:18px;font-size:12px;color:#cbd5f5}
+.footer{
+  margin-top:18px;
+  font-size:12px;
+  color:#cbd5f5;
+}
+
+/* ===== HORROR FLASH ===== */
+.flash{
+  position:fixed;
+  inset:0;
+  background:#8b0000;
+  opacity:0;
+  pointer-events:none;
+  z-index:99;
+}
 </style>
 </head>
 
@@ -98,6 +126,7 @@ canvas{
 
 <canvas id="bg"></canvas>
 <div class="overlay"></div>
+<div class="flash" id="flash"></div>
 
 <div class="container">
   <div class="avatar">
@@ -123,61 +152,113 @@ canvas{
     <i class="fa-solid fa-user"></i> Facebook Profile
   </a>
 
-  <div class="footer">© 2025 Yasin Bro • Animated Bio</div>
+  <div class="footer">© 2025 Yasin Bro • Horror Mode</div>
 </div>
 
 <script>
-/* ===== CANVAS VIDEO ANIMATION ===== */
+/* ===== BACKGROUND ANIMATION ===== */
 const c=document.getElementById("bg"),x=c.getContext("2d");
 let w,h,pts=[];
 function resize(){
-  w=c.width=window.innerWidth;
-  h=c.height=window.innerHeight;
-  pts=[...Array(120)].map(()=>({
+  w=c.width=innerWidth;
+  h=c.height=innerHeight;
+  pts=[...Array(160)].map(()=>({
     x:Math.random()*w,
     y:Math.random()*h,
-    v:0.5+Math.random()*1.5,
+    v:0.8+Math.random()*2,
     s:1+Math.random()*2
   }));
 }
-window.onresize=resize;resize();
+onresize=resize; resize();
 
-function draw(){
-  x.fillStyle="rgba(2,6,23,.35)";
+(function draw(){
+  x.fillStyle="rgba(2,6,23,.45)";
   x.fillRect(0,0,w,h);
-  x.fillStyle="#38bdf8";
+  x.fillStyle="#ff0000";
   pts.forEach(p=>{
     p.y-=p.v;
     if(p.y<0)p.y=h;
     x.fillRect(p.x,p.y,p.s,p.s*3);
   });
   requestAnimationFrame(draw);
-}
-draw();
+})();
 
-/* ===== AUDIO (SELF GENERATED) ===== */
-const AudioCtx=window.AudioContext||window.webkitAudioContext;
-const ctx=new AudioCtx();
+/* ===== AUDIO ENGINE ===== */
+const AC=window.AudioContext||window.webkitAudioContext;
+const ctx=new AC();
+
+/* CLICK SOUND */
 function clickSound(){
   const o=ctx.createOscillator(),g=ctx.createGain();
-  o.type="sine";o.frequency.value=700;
-  g.gain.value=0.05;
+  o.type="square";o.frequency.value=1000;
+  g.gain.value=0.06;
   o.connect(g);g.connect(ctx.destination);
-  o.start();o.stop(ctx.currentTime+.08);
+  o.start();o.stop(ctx.currentTime+.07);
 }
 document.querySelectorAll(".link").forEach(b=>{
   b.onclick=()=>{ctx.resume();clickSound();}
 });
 
-// soft ambient start
-setTimeout(()=>{
-  ctx.resume();
+/* ===== HORROR EFFECT ===== */
+let triggered=false;
+const flash=document.getElementById("flash");
+
+function shake(){
+  document.body.animate([
+    {transform:"translate(0,0)"},
+    {transform:"translate(-12px,8px)"},
+    {transform:"translate(10px,-8px)"},
+    {transform:"translate(-8px,6px)"},
+    {transform:"translate(0,0)"}
+  ],{duration:450});
+}
+
+function horrorSound(){
+  const o1=ctx.createOscillator();
+  const o2=ctx.createOscillator();
+  const g=ctx.createGain();
+
+  o1.type="sawtooth";
+  o2.type="triangle";
+
+  o1.frequency.value=140;
+  o2.frequency.value=40;
+
+  o1.frequency.exponentialRampToValueAtTime(18,ctx.currentTime+2);
+  o2.frequency.exponentialRampToValueAtTime(14,ctx.currentTime+2);
+
+  g.gain.setValueAtTime(0.001,ctx.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.3,ctx.currentTime+.3);
+  g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+2.3);
+
+  o1.connect(g);o2.connect(g);g.connect(ctx.destination);
+  o1.start();o2.start();
+  o1.stop(ctx.currentTime+2.4);o2.stop(ctx.currentTime+2.4);
+}
+
+function heartbeat(){
   const o=ctx.createOscillator(),g=ctx.createGain();
-  o.type="sine";o.frequency.value=120;
-  g.gain.value=.015;
+  o.type="sine";o.frequency.value=55;
+  g.gain.value=0.15;
   o.connect(g);g.connect(ctx.destination);
   o.start();
-},800);
+  setTimeout(()=>o.stop(),160);
+}
+
+/* FIRST TOUCH TRIGGER */
+document.body.addEventListener("click",()=>{
+  if(triggered) return;
+  triggered=true;
+  ctx.resume();
+
+  flash.style.opacity=.9;
+  setTimeout(()=>flash.style.opacity=0,120);
+
+  shake();
+  horrorSound();
+  setTimeout(heartbeat,500);
+  setTimeout(heartbeat,900);
+},{once:true});
 </script>
 
 </body>
