@@ -69,16 +69,23 @@ canvas{
   margin-top:16px;
   font-size:24px;
   font-weight:800;
-  color:#ff4d4d;
+  color:#ffffff; /* WHITE NAME */
   display:flex;
   justify-content:center;
   align-items:center;
   gap:6px;
-  text-shadow:0 0 12px rgba(255,0,0,.6);
+  text-shadow:0 0 12px rgba(255,255,255,.6);
 }
 .badge{
-  width:18px;height:18px;border-radius:50%;
-  background:#ff0000;display:grid;place-items:center;font-size:11px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#1877f2; /* FACEBOOK BLUE */
+  display:grid;
+  place-items:center;
+  font-size:11px;
+  color:#ffffff;
+  box-shadow:0 0 10px rgba(24,119,242,.9);
 }
 .role{
   margin-top:6px;
@@ -251,7 +258,6 @@ function heartbeat(){
   setTimeout(()=>o.stop(),160);
 }
 
-/* FIRST TOUCH TRIGGER */
 document.body.addEventListener("click",()=>{
   if(triggered) return;
   triggered=true;
